@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const s = StyleSheet.create({
-    containerFormLogin:{
+    containerFormSignUp:{
         // flex:1,
         backgroundColor:'#00c2b255',
         marginHorizontal:30,
@@ -28,14 +28,14 @@ const s = StyleSheet.create({
         paddingVertical:10
         
     },
-    iconLogin:{
+    iconSignUp:{
         width:25,
         height:25
     },
     textInfo:{
         fontSize:50,
         flexDirection:'row',
-        justifyContent:'space-between',
+        justifyContent:'flex-end',
         paddingHorizontal:5,
         marginVertical:20,
         

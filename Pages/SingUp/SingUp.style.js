@@ -12,20 +12,20 @@ export const s = StyleSheet.create({
         width:40,
         height:40
     },
-    iconLogin:{
-        width:150,
-        height:150
+    iconSingUp:{
+        width:50,
+        height:50
     },
-    titleLogin:{
-        flex:2,
+    titleSignUp:{
+        flex:1,
         justifyContent:'center',
         alignItems:'center'
     },
-    TextTitleLogin:{
+    TextTitleSingUp:{
         fontSize:20,
         paddingTop:10
     },
-    formLogin:{
+    formSingUp:{
         flex:4
     }
 })
