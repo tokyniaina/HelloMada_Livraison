@@ -34,7 +34,6 @@ const FormSignUp = () => {
       <View style={s.formInput}>
         <TextInput
           style={s.styleInputText}
-          current-password
           placeholder="Password"
         />
         <Image style={s.iconSignUp} source={IconPasswordInput} />
