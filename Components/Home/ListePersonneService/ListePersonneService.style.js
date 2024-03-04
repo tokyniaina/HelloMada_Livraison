@@ -8,7 +8,7 @@ export const s =StyleSheet.create({
         elevation:2,
         borderRadius:5,
         margin:5,
-        padding:5
+        padding:5,
 
     },
     infoLivreur:{

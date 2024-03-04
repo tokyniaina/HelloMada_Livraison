@@ -8,9 +8,12 @@ import ServiceType from "../../Components/Home/ServiceType/ServiceType";
 import ListePersonneService from "../../Components/Home/ListePersonneService/ListePersonneService";
 import { livreurs } from "../../FakeData/fakeData";
 import livreurImg from "../../assets/images/livreurImg.jpg"
+import Txt from "../../Components/Txt/Txt";
+import {useNavigation} from '@react-navigation/native'
 
 const Home = () => {
   const [livreur, setLivreur] = useState(livreurs);
+  const nav = useNavigation()
 
   console.log(livreurs);
 
@@ -19,11 +22,14 @@ const Home = () => {
       <ListePersonneService key={livreur.id} livreur={livreur} image={livreurImg}/>
     ));
   };
+  const goToLogin = () =>{
+    nav.navigate("Login")
+  }
 
   return (
     <Container>
       <View style={s.NavBar}>
-        <NavBar />
+        <NavBar onPress={goToLogin}/>
       </View>
       <View style={s.cart}>
         <Cart />
@@ -32,7 +38,7 @@ const Home = () => {
         <ServiceType />
       </View>
       <View style={s.ListepersoService}>
-        <Text style={s.titreListe}>APROXIMITE</Text>
+        <Txt style={s.titreListe}>APROXIMITE</Txt>
         <ScrollView showsVerticalScrollIndicator={false} style={s.listePerso}>{listLivreur()}</ScrollView>
       </View>
     </Container>

@@ -1,6 +1,8 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import { s } from "./ListePersonneService.style";
+import Txt from "../../Txt/Txt";
+
 
 const ListePersonneService = ({ livreur, image }) => {
   return (
@@ -11,13 +13,13 @@ const ListePersonneService = ({ livreur, image }) => {
         </View>
 
         <View style={s.infoLivreur}>
-          <Text>{livreur.nom}</Text>
-          <Text>petite infomation ...</Text>
+          <Txt >{livreur.nom}</Txt>
+          <Txt >petite infomation ...</Txt>
         </View>
       </View>
 
       <View style={s.lieu}>
-        <Text>2 mètres</Text>
+        <Txt>2 mètres</Txt>
       </View>
     </View>
   );

@@ -1,25 +1,26 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import client from '../../../assets/images/client.jpg'
 import NavBar from '../../../assets/images/NavBar.png'
 import { s } from './NavBar.style'
-s
+import Txt from '../../Txt/Txt'
 
 
-const Navbar = () => {
+
+const Navbar = ({onPress}) => {
   return (
     <>
     <View style={s.containerNav}>
       <Image source={client} style={s.imgPersonne}/>
       <View style={s.infoPersonne}>
-        <Text>Nirina</Text>
-        <Text>Client</Text>
+        <Txt>Nirina</Txt>
+        <Txt>Client</Txt>
       </View>
       
     </View>
-    <View style={s.toggleStyle}>
+    <TouchableOpacity style={s.toggleStyle} onPress={onPress} >
         <Image source={NavBar} style={s.ToggleImage}/>
-    </View>
+    </TouchableOpacity>
     
     </>
   )

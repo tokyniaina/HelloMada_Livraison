@@ -17,10 +17,10 @@ export const s = StyleSheet.create({
     paddingLeft:10
   },
   toggleStyle:{
-    paddingRight:10
+    paddingRight:10,
   },
   ToggleImage: {
-    width:40,
-    height:40,
+    width:30,
+    height:30,
   },
 });
