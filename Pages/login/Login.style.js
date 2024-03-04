@@ -1,20 +1,20 @@
 import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:'red',
+    iconLogin:{
+        width:150,
+        height:150
     },
     titleLogin:{
-        flex:1,
-        backgroundColor:'red'
+        flex:2,
+        justifyContent:'flex-end',
+        alignItems:'center'
     },
     TextTitleLogin:{
-        alignItems:'center',
-        justifyContent:'center'
+        fontSize:20,
+        paddingTop:10
     },
     formLogin:{
         flex:4,
-        backgroundColor:'blue'
     }
 })
