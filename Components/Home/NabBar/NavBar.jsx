@@ -4,16 +4,16 @@ import client from '../../../assets/images/client.jpg'
 import NavBar from '../../../assets/images/NavBar.png'
 import { s } from './NavBar.style'
 import Txt from '../../Txt/Txt'
-import {useNavigation } from "@react-navigation/native";
+import {useNavigation, useRoute } from "@react-navigation/native";
 
 
 
-const Navbar = ({onPress}) => {
+const Navbar = ({onPress,coordonnee}) => {
   const nav = useNavigation()
   return (
     <>
     <View style={s.containerNav}>
-      <TouchableOpacity onPress={() => nav.navigate('Profil')}>
+      <TouchableOpacity onPress={() => nav.navigate('Profil', {coordonnee})}>
         <Image source={client} style={s.imgPersonne}/>
       </TouchableOpacity>
       

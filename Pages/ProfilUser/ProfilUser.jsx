@@ -6,10 +6,12 @@ import Txt from "../../Components/Txt/Txt";
 import client from "../../assets/images/client.jpg";
 import DetailPprofil from "./DetailProfil/DetailPprofil";
 import Iconprevious from '../../assets/images/Iconprevious.jpg'
-import {useNavigation} from "@react-navigation/native"
+import {useNavigation, useRoute} from "@react-navigation/native";
+
 
 const ProfilUser = () => {
     const nav = useNavigation()
+    const {params} = useRoute()
   return (
     <Container>
       <View style={s.ViewPreviousIcon}>
@@ -27,7 +29,7 @@ const ProfilUser = () => {
       </View>
 
       <View style={s.infoProfils}>
-        <DetailPprofil />
+        <DetailPprofil params ={params} />
       </View>
     </Container>
   );

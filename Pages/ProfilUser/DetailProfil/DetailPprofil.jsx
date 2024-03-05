@@ -4,7 +4,7 @@ import { s } from './DetailPprofil.style'
 import Txt from '../../../Components/Txt/Txt'
 
 
-const DetailPprofil = () => {
+const DetailPprofil = ({params}) => {
   return (
     <>
     <View style={s.nomProfilContainer} >
@@ -17,8 +17,8 @@ const DetailPprofil = () => {
             <Txt>longitude</Txt>
         </View>
         <View style={s.coordonnee}>
-            <Txt>15.2</Txt>
-            <Txt>56.3</Txt>
+            <Txt>{params.coordonnee.lat}</Txt>
+            <Txt>{params.coordonnee.lng}</Txt>
         </View>
     </View>
     

@@ -1,6 +1,7 @@
 import { View, Text,ScrollView } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../Components/Container/Container";
+import { getCurrentPositionAsync, requestForegroundPermissionsAsync } from 'expo-location'
 import { s } from "./Home.style";
 import NavBar from "../../Components/Home/NabBar/NavBar";
 import Cart from "../../Components/Home/Carte/Cart";
@@ -12,8 +13,13 @@ import Txt from "../../Components/Txt/Txt";
 import {useNavigation} from '@react-navigation/native'
 
 const Home = () => {
+  const [coordonnee, setCoordonnee] = useState()
   const [livreur, setLivreur] = useState(livreurs);
   const nav = useNavigation()
+
+  useEffect(()=>{
+    getUserCoordonnee();
+  }, [])
 
   console.log(livreurs);
 
@@ -26,13 +32,28 @@ const Home = () => {
     nav.navigate("Login")
   }
 
+  async function getUserCoordonnee(){
+    let {status} = await requestForegroundPermissionsAsync();
+    if(status === "granted"){
+      const location = await getCurrentPositionAsync();
+      setCoordonnee({
+        lat: location.coords.latitude,
+        lng: location.coords.longitude
+      });
+
+    } else {
+      setCoords({ lat: "-18.87", lng: "27.56" });
+    }
+  }
+
+
   return (
     <Container>
       <View style={s.NavBar}>
-        <NavBar onPress={goToLogin}/>
+        <NavBar onPress={goToLogin} coordonnee={coordonnee}/>
       </View>
       <View style={s.cart}>
-        <Cart />
+        {coordonnee && <Cart coordonnees = {coordonnee}/>}
       </View>
       <View style={s.serviceType}>
         <ServiceType />

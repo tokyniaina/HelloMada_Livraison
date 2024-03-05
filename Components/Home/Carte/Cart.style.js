@@ -16,4 +16,18 @@ export const s = StyleSheet.create({
         width: '100%',
         height: '100%',
       },
+      toggleButton: {
+        position: "absolute",
+        bottom: 2,
+        left: 2,
+        backgroundColor: "rgba(253, 253, 253, 1)",
+        padding: 10,
+        borderRadius: 5,
+        zIndex: 1000,
+        elevation:5,
+        borderWidth:0.5
+      },
+      toggleButtonText: {
+        fontSize: 15,
+      },
 })
